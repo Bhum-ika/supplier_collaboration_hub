@@ -9,9 +9,9 @@ const brandsRouter = require('./routes/Brands');
 const cors = require('cors');
 // main.catch(err=> console.log(err));
 //middleware
-server.use(cors{
-    exposeHeaders:['X-Total-Count'],
-})
+server.use(cors({
+    exposeHeaders:['X-Total-Count']
+}))
 server.use(express.json());
 server.use('/products',productRouter.router);
 server.use('/categories',categoriesRouter.router);
