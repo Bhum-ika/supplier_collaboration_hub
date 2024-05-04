@@ -15,6 +15,23 @@ export const incrementAsync = createAsyncThunk(
   }
 );
 
+export const checkUserAsync = createAsyncThunk(
+  'user/checkUser',
+  async (loginInfo) => {
+    const response = await checkUserAsync(loginInfo);
+    return response.data;
+  }
+)
+
+export const signOutAsync = createAsyncThunk(
+  'user/signOut',
+  async (loginInfo) => {
+    const response = await signOut(loginInfo);
+    return response.data;
+  }
+)
+
+
 export const counterSlice = createSlice({
   name: 'counter',
   initialState,
@@ -33,7 +50,14 @@ export const counterSlice = createSlice({
       .addCase(incrementAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.value += action.payload;
-      });
+      }),
+      .addCase(signOutAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(signOutAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.value = null;
+      }),
   },
 });
 

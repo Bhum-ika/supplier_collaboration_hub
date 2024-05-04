@@ -6,3 +6,12 @@ export function fetchCount(amount = 1) {
   }
   );
 }
+
+//export function checkUser(LoginInfo) { }
+
+export function signOut(userId) {
+  return new Promise(async (resolve)=> {
+    
+    resolve({ data : 'success'});
+  });
+}
