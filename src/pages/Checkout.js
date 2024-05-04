@@ -33,16 +33,32 @@ const products = [
   // More products...
 ];
 
+const addresses=[
+    {
+        name:'Ram Kumar',
+        city:'Delhi',
+        pincode:110044,
+        phone:8796543111
+
+    },
+    {
+        name:'Shyam Kumar',
+        city:'Delhi',
+        pincode:1100413,
+        phone:8706565101
+
+    },
+]
 function Checkout() {
   const [open, setOpen] = useState(true);
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-x-8 gap-y-10  lg:grid-cols-5 ">
         <div className="lg:col-span-3">
-          <form>
+          <form className="bg-white px-5 py-12">
             <div className="space-y-12">
               <div className="border-b border-gray-900/10 pb-12">
-                <h2 className="text-base font-semibold leading-7 text-gray-900">
+                <h2 className="text-2xl font-semibold leading-7 text-gray-900">
                   Personal Information
                 </h2>
                 <p className="mt-1 text-sm leading-6 text-gray-600">
@@ -198,101 +214,60 @@ function Checkout() {
                   </div>
                 </div>
               </div>
-
+              <div className="mt-6 flex items-center justify-end gap-x-6">
+              <button
+                type="button"
+                className="text-sm font-semibold leading-6 text-gray-900"
+              >
+                Reset
+              </button>
+              <button
+                type="submit"
+                className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Add Address
+              </button>
+            </div>
               <div className="border-b border-gray-900/10 pb-12">
                 <h2 className="text-base font-semibold leading-7 text-gray-900">
-                  Notifications
+                  Address
                 </h2>
                 <p className="mt-1 text-sm leading-6 text-gray-600">
-                  We'll always let you know about important changes, but you
-                  pick what else you want to hear about.
+                Choose from Existing Address
                 </p>
-
-                <div className="mt-10 space-y-10">
-                  <fieldset>
-                    <legend className="text-sm font-semibold leading-6 text-gray-900">
-                      By Email
-                    </legend>
-                    <div className="mt-6 space-y-6">
-                      <div className="relative flex gap-x-3">
-                        <div className="flex h-6 items-center">
-                          <input
-                            id="comments"
-                            name="comments"
-                            type="checkbox"
-                            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                          />
-                        </div>
-                        <div className="text-sm leading-6">
-                          <label
-                            htmlFor="comments"
-                            className="font-medium text-gray-900"
-                          >
-                            Comments
-                          </label>
-                          <p className="text-gray-500">
-                            Get notified when someones posts a comment on a
-                            posting.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="relative flex gap-x-3">
-                        <div className="flex h-6 items-center">
-                          <input
-                            id="candidates"
-                            name="candidates"
-                            type="checkbox"
-                            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                          />
-                        </div>
-                        <div className="text-sm leading-6">
-                          <label
-                            htmlFor="candidates"
-                            className="font-medium text-gray-900"
-                          >
-                            Candidates
-                          </label>
-                          <p className="text-gray-500">
-                            Get notified when a candidate applies for a job.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="relative flex gap-x-3">
-                        <div className="flex h-6 items-center">
-                          <input
-                            id="offers"
-                            name="offers"
-                            type="checkbox"
-                            className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                          />
-                        </div>
-                        <div className="text-sm leading-6">
-                          <label
-                            htmlFor="offers"
-                            className="font-medium text-gray-900"
-                          >
-                            Offers
-                          </label>
-                          <p className="text-gray-500">
-                            Get notified when a candidate accepts or rejects an
-                            offer.
-                          </p>
-                        </div>
-                      </div>
+                <ul role="list">
+      {addresses.map((address) => (
+        <li key={address.email} className="flex justify-between gap-x-6 px-3 py-5 border-solid border-2 border-gray-200">
+          <div className="flex min-w-0 gap-x-4">
+          <input
+                         name="address"
+                          type="radio"
+                          className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                        />
+            <div className="min-w-0 flex-auto">
+              <p className="text-sm font-semibold leading-6 text-gray-900">{address.name}</p>
+              <p className="text-sm leading-6 text-gray-900">{address.phone}</p>
+                          </div>
+          </div>
+                    <div className=" shrink-0 sm:flex sm:flex-col sm:items-end">
+            <p className="text-sm leading-6 text-gray-900">{address.city}</p>
+            <p className="text-sm leading-6 text-gray-500">{address.pincode}</p>
                     </div>
-                  </fieldset>
+        </li>
+      ))}
+    </ul>
+                <div className="mt-10 space-y-10">
+                  
                   <fieldset>
                     <legend className="text-sm font-semibold leading-6 text-gray-900">
-                      Push Notifications
+                      Payment Methods
                     </legend>
-                    <p className="mt-1 text-sm leading-6 text-gray-600">
-                      These are delivered via SMS to your mobile phone.
-                    </p>
+                   
                     <div className="mt-6 space-y-6">
                       <div className="flex items-center gap-x-3">
                         <input
-                          id="push-everything"
-                          name="push-notifications"
+                          id="cash"
+                          name="payments"
                           type="radio"
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                         />
@@ -300,13 +275,13 @@ function Checkout() {
                           htmlFor="push-everything"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          Everything
+                          Cash
                         </label>
                       </div>
                       <div className="flex items-center gap-x-3">
                         <input
-                          id="push-email"
-                          name="push-notifications"
+                          id="card"
+                          name="payments"
                           type="radio"
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
                         />
@@ -314,23 +289,10 @@ function Checkout() {
                           htmlFor="push-email"
                           className="block text-sm font-medium leading-6 text-gray-900"
                         >
-                          Same as email
+                          Card Payments
                         </label>
                       </div>
-                      <div className="flex items-center gap-x-3">
-                        <input
-                          id="push-nothing"
-                          name="push-notifications"
-                          type="radio"
-                          className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                        <label
-                          htmlFor="push-nothing"
-                          className="block text-sm font-medium leading-6 text-gray-900"
-                        >
-                          No push notifications
-                        </label>
-                      </div>
+                      
                     </div>
                   </fieldset>
                 </div>
@@ -338,20 +300,7 @@ function Checkout() {
             </div>
            
 
-            <div className="mt-6 flex items-center justify-end gap-x-6">
-              <button
-                type="button"
-                className="text-sm font-semibold leading-6 text-gray-900"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Save
-              </button>
-            </div>
+          
           </form>
           </div>
           </div>
@@ -439,7 +388,7 @@ function Checkout() {
                     href="#"
                     className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                   >
-                    Checkout
+                   Pay Now
                   </a>
                 </div>
                 <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
