@@ -5,7 +5,7 @@ import {
   selectUserInfo,
   selectUserInfoStatus,
   selectUserOrders,
-} from '../UserSlice';
+} from '../userSlice';
 import { Grid } from 'react-loader-spinner';
 
 export default function UserOrders() {

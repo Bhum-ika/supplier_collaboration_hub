@@ -7,7 +7,7 @@ import {
   selectCategories,
   selectProductById,
   updateProductAsync,
-} from '../../product/ProductSlice';
+} from '../../product/productSlice';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';

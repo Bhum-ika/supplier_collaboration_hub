@@ -1,10 +1,9 @@
-
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {
   fetchLoggedInUserOrders,
   updateUser,
   fetchLoggedInUser,
-} from './UserAPI';
+} from './userAPI';
 
 const initialState = {
   status: 'idle',

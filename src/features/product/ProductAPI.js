@@ -1,5 +1,4 @@
 
-
 export function fetchProductById(id) {
   return new Promise(async (resolve) => {
     const response = await fetch('/products/' + id);

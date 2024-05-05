@@ -7,14 +7,14 @@ import {
 } from '../features/cart/cartSlice';
 import { Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { updateUserAsync } from '../features/user/UserSlice';
+import { updateUserAsync } from '../features/user/userSlice';
 import { useState } from 'react';
 import {
   createOrderAsync,
   selectCurrentOrder,
   selectStatus,
 } from '../features/order/orderSlice';
-import { selectUserInfo } from '../features/user/UserSlice';
+import { selectUserInfo } from '../features/user/userSlice';
 import { Grid } from 'react-loader-spinner';
 
 function Checkout() {

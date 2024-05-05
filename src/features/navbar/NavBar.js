@@ -1,4 +1,3 @@
-
 import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import {
@@ -10,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectItems } from '../cart/cartSlice';
 import { selectLoggedInUser } from '../auth/authSlice';
-import { selectUserInfo } from '../user/UserSlice';
+import { selectUserInfo } from '../user/userSlice';
 
 
 const navigation = [
@@ -242,6 +241,6 @@ function NavBar({ children }) {
       </div>}
     </>
   );
-};
+}
 
 export default NavBar;

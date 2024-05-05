@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
+import NavBar from "../features/navbar/Navbar";
 import ProductList from "../features/product/components/ProductList";
 import Footer from "../features/common/Footer";
-import NavBar from "../features/navbar/NavBar";
 
 function Home() {
     return ( 
