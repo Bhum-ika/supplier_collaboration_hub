@@ -52,7 +52,7 @@ export default function Cart() {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+        <div className="fixed inset-0 bg-white bg-opacity-75 transition-opacity" />
       </Transition.Child>
 
       <div className="fixed inset-0 overflow-hidden">
@@ -109,7 +109,7 @@ export default function Cart() {
                                   <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                                 </div>
                                 <div className="flex flex-1 items-end justify-between text-sm">
-                                  <div className="text-gray-500 flex items gap-3">Qty
+                                  <div className="text-gray-800 flex items gap-3">Qty
                                   <select className=' border w-10 text-center rounded-lg hover:bg-blue-600 hover:text-white h-6 '>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
